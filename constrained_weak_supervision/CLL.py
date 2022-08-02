@@ -17,15 +17,12 @@ class CLL(BaseClassifier):
     ----------
     max_iter : int, default=300
         Maximum number of iterations taken for solvers to converge.
-
-    num_trials : int, default=3
-        number of time's labels are estimated before the mean is taken
     
     log_name : string, default=None
         Specifies directory name for a logger object.
     """
 
-    def __init__(self, max_iter=300, num_trials=3, log_name=None,):
+    def __init__(self, max_iter=300, log_name=None,):
         
         #get rid of trials
 
@@ -36,7 +33,6 @@ class CLL(BaseClassifier):
         """
 
         self.max_iter = max_iter
-        self.num_trials = num_trials
 
         if log_name is None:
             self.logger = None
@@ -107,10 +103,9 @@ class CLL(BaseClassifier):
       
         self.ys = []
 
-        for i in range(self.num_trials):
-            y = np.random.rand(n, num_classes)
-            y = tf.Variable(y.astype(np.float32), trainable=True, constraint=lambda x: tf.clip_by_value(x, 0, 1))  
-            self.ys.append(self._run_constraints(y, self.constraints))
+        y = np.random.rand(n, num_classes)
+        y = tf.Variable(y.astype(np.float32), trainable=True, constraint=lambda x: tf.clip_by_value(x, 0, 1))  
+        self.ys.append(self._run_constraints(y, self.constraints))
             
         self.ys = np.array(self.ys)
 

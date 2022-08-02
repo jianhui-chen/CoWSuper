@@ -4,21 +4,20 @@ with open("README.md", 'r') as f:
     long_description = f.read()
     
 setup(
-    name='cowsupervision',
-    version='0.7.1.2',
-    description='A friendly watermarking tool with optional GUI component.',
-    license="Apache-2.0",
+    name='CoWSuper',
+    version='0.0.1',
+    description='The package produces labels using constrained weak supervision.',
+    license="MIT License",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='holypython.com',
-    author_email='watermarkd@holypython.com',
-    url="https://holypython.com/",
-    download_url = 'https://github.com/holypython/Watermarkd/archive/0.7.1.2.tar.gz',
-    packages=['Watermarkd'],
+    author='Bert Huang',
+    author_email='bert@cs.tufts.edu',
+    packages=['CoWSuper'],
 
     install_requires=[
-       'pillow',
-       'pysimplegui',
+        'Tensorflow',
+        'numpy',
+        'Scikit-learn'
     ],
 
     python_requires='>=3.6'
