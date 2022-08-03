@@ -1,8 +1,8 @@
-from utilities import *
+from cowsuper.utilities import *
 
 # Import model
-from CLL import CLL
-from DCWS import DataConsistency
+from cowsuper.CLL import CLL
+from cowsuper.DCWS import DataConsistency
 
 """
     Binary Datasets:
@@ -66,7 +66,6 @@ def run_experiments(dataset):
     
     ###################################################################
     ### DCWS
-    
     dcws = DataConsistency()
     dcws.fit(train_data, weak_signals)
     predicted_proba = np.squeeze(dcws.predict_proba(train_data))
@@ -84,7 +83,6 @@ def run_experiments(dataset):
     model.fit(train_data, train_labels, batch_size=32, epochs=20, verbose=1)
     test_predictions = np.squeeze(model.predict(test_data))
     print(f"The test accuracy is: {dcws.get_score(test_labels, test_predictions, metric='accuracy')}")
-    
 
 if __name__ == '__main__':
     # print("Running synthetic experiments...")

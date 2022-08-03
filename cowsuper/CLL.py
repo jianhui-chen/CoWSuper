@@ -2,10 +2,10 @@ import sys
 import numpy as np
 import tensorflow as tf
 
-from BaseClassifier import BaseClassifier
-from ConstraintEstimator import ConstraintEstimator
-from utilities import convert_to_ovr_signals
-from log import Logger
+from .BaseClassifier import BaseClassifier
+from .ConstraintEstimator import ConstraintEstimator
+from .utilities import convert_to_ovr_signals
+from .log import Logger
 
 class CLL(BaseClassifier):
     """

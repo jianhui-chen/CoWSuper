@@ -13,11 +13,10 @@ setup(
     author='Bert Huang',
     author_email='bert@cs.tufts.edu',
     packages=['CoWSuper'],
-
     install_requires=[
-        'Tensorflow',
+        'tensorflow',
         'numpy',
-        'Scikit-learn'
+        'scikit-learn'
     ],
 
     python_requires='>=3.6'

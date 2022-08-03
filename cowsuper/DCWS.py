@@ -3,10 +3,10 @@ import numpy as np
 import tensorflow as tf
 
 from tensorflow.keras import layers
-from BaseClassifier import BaseClassifier
-from ConstraintEstimator import ConstraintEstimator
-from utilities import convert_to_ovr_signals, majority_vote_signal
-from log import Logger
+from .BaseClassifier import BaseClassifier
+from .ConstraintEstimator import ConstraintEstimator
+from .utilities import convert_to_ovr_signals, majority_vote_signal
+from .log import Logger
 
 
 class DataConsistency(BaseClassifier):

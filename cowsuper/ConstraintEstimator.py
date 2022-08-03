@@ -1,6 +1,6 @@
 import numpy as np
 
-from utilities import convert_to_ovr_signals
+from .utilities import convert_to_ovr_signals
 
 
 class ConstraintEstimator():
